@@ -1,3 +1,4 @@
+import 'package:banking_app/Components/card.dart';
 import 'package:flutter/material.dart';
 import 'package:banking_app/constants/colors_constant.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -13,118 +14,24 @@ class CardList extends StatelessWidget {
     return ListView(
       scrollDirection: Axis.horizontal,
       padding: const EdgeInsets.only(left: 16, right: 16),
-      children: [
-        Container(
-          margin: const EdgeInsets.only(right: 10),
-          height: 199,
-          width: 344,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(28),
-            color: kBlueColor,
-          ),
-          child: Stack(
-            children: [
-              Positioned(
-                child: SvgPicture.asset('assets/svg/ellipse_top_pink.svg'),
-                top: 0,
-                left: 0,
-              ),
-              Positioned(
-                child: SvgPicture.asset('assets/svg/ellipse_pink_bottom.svg'),
-                bottom: 0,
-                right: 0,
-              ),
-              Positioned(
-                child: Text(
-                  'CARD NUMBER',
-                  style: GoogleFonts.inter(
-                    fontWeight: FontWeight.w400,
-                    color: kWhiteColor,
-                    fontSize: 14,
-                  ),
-                ),
-                top: 48,
-                left: 29,
-              ),
-              Positioned(
-                child: Text(
-                  '**** **** **** 2356',
-                  style: GoogleFonts.inter(
-                    fontWeight: FontWeight.w700,
-                    color: kWhiteColor,
-                    fontSize: 20,
-                  ),
-                ),
-                top: 65,
-                left: 29,
-              ),
-              Positioned(
-                child: Text(
-                  'CARD HOLDER NAME',
-                  style: GoogleFonts.inter(
-                    fontWeight: FontWeight.w400,
-                    color: kWhiteColor,
-                    fontSize: 14,
-                  ),
-                ),
-                top: 137,
-                left: 29,
-              ),
-              Positioned(
-                child: Text(
-                  'Vishal Chauhan',
-                  style: GoogleFonts.inter(
-                    fontWeight: FontWeight.w700,
-                    color: kWhiteColor,
-                    fontSize: 20,
-                  ),
-                ),
-                top: 154,
-                left: 29,
-              ),
-              Positioned(
-                child: Text(
-                  'EXPIRY DATE',
-                  style: GoogleFonts.inter(
-                    fontWeight: FontWeight.w400,
-                    color: kWhiteColor,
-                    fontSize: 14,
-                  ),
-                ),
-                top: 137,
-                left: 202,
-              ),
-              Positioned(
-                child: Text(
-                  '05-10-2025',
-                  style: GoogleFonts.inter(
-                    fontWeight: FontWeight.w700,
-                    color: kWhiteColor,
-                    fontSize: 20,
-                  ),
-                ),
-                top: 154,
-                left: 202,
-              ),
-              const Positioned(
-                child: Image(
-                  image: AssetImage('assets/images/mastercard.png'),
-                ),
-                top: 35,
-                right: 21,
-              ),
-            ],
-          ),
+      children: const [
+        CardWidget(
+          cardBackground: kBlueColor,
+          cardExpiryDate: '04-05-2025',
+          cardHolderName: 'Vishal Chauhan',
+          cardNumber: '**** **** **** 4765',
+          topSVG: 'assets/svg/ellipse_top_pink.svg',
+          bottomSVG: 'assets/svg/ellipse_pink_bottom.svg',
+          cardType: 'assets/images/mastercard.png',
         ),
-        Container(
-          margin: const EdgeInsets.only(right: 10),
-          height: 199,
-          width: 344,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(28),
-            color: kPinkColor,
-          ),
-        )
+        CardWidget(
+            cardNumber: '**** **** **** 8764',
+            cardHolderName: 'Vishal Chauhan',
+            cardExpiryDate: '06-08-2025',
+            cardBackground: kPinkColor,
+            topSVG: 'assets/svg/ellipse_blue_top.svg',
+            bottomSVG: 'assets/svg/bottom_blue_element.svg',
+            cardType: 'assets/images/mastercard.png')
       ],
     );
   }
