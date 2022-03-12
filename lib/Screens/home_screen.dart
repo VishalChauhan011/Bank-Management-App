@@ -1,5 +1,6 @@
 import 'package:banking_app/Components/card_list.dart';
 import 'package:banking_app/Components/operations_list.dart';
+import 'package:banking_app/Components/transaction_list.dart';
 import 'package:banking_app/constants/colors_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -36,6 +37,8 @@ class _HomeScreenState extends State<HomeScreen> {
         child: ListView(
           physics: const ClampingScrollPhysics(),
           children: [
+
+            //side menu bar
             Container(
               margin: const EdgeInsets.only(left: 16, right: 16, top: 16),
               child: Row(
@@ -58,6 +61,8 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(
               height: 25,
             ),
+
+            //greetings
             Padding(
               padding: const EdgeInsets.only(left: 16, bottom: 16),
               child: Column(
@@ -82,10 +87,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
+
+            //debit and credit cards
             SizedBox(
               height: 199,
               child: CardList(),
             ),
+
+            //operation section
             Padding(
               padding: const EdgeInsets.only(
                   left: 21, top: 29, bottom: 15, right: 37),
@@ -113,10 +122,26 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-             const SizedBox(
+            const SizedBox(
               height: 123,
-              child:OperationList(),
+              child: OperationList(),
             ),
+            const SizedBox(
+              height: 29,
+            ),
+
+            //transaction history
+            Padding(
+              padding: const EdgeInsets.only(left: 21),
+              child: Text(
+                'Transaction History',
+                style: GoogleFonts.inter(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 18,
+                ),
+              ),
+            ),
+            const TransactionList(),
           ],
         ),
       ),

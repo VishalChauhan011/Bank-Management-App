@@ -31,7 +31,7 @@ class OperationCard extends StatelessWidget {
           BoxShadow(
             color: kTenBlackColor,
             blurRadius: 10,
-            spreadRadius: 5,
+            spreadRadius: 4,
             offset: Offset(8.0, 8.0),
           ),
         ],

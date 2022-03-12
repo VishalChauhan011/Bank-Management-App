@@ -1,8 +1,7 @@
 import 'package:banking_app/Components/card.dart';
 import 'package:flutter/material.dart';
 import 'package:banking_app/constants/colors_constant.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 
 class CardList extends StatelessWidget {
   CardList({Key? key}) : super(key: key);
